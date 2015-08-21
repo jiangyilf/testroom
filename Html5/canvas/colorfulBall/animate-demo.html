@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf8'>
+	<title></title>
+	<style type="text/css">
+	#canvas{display:block;padding:0;margin:20px auto;border: 1px solid green;}
+	</style>
+</head>
+<body>
+	<canvas id="canvas">当前浏览器不支持Canvas，请更换浏览器后再试</canvas>
+	<script type="text/javascript">
+	var WINDOW_WIDTH = 800;
+	var WINDOW_HEIGHT =600;
+	var ball = {x:50, y:50, r:20, g:2, vx:4, vy:-10, color:"#005588"}
+    window.onload = function(){
+		var canvas = document.getElementById('canvas');
+		canvas.width = WINDOW_WIDTH;
+		canvas.height = WINDOW_HEIGHT;
+		var x =50;
+		var y =50;
+		var context = canvas.getContext('2d');
+		setInterval(function(){
+			render(context);
+			update();
+		},50);
+
+		function update(){
+			ball.x += ball.vx;
+			ball.y += ball.vy;
+			ball.vy += ball.g;
+			if(ball.y>=WINDOW_HEIGHT-ball.r/2){
+				ball.y = WINDOW_HEIGHT-ball.r/2;
+				ball.vy = -ball.vy*0.5;
+			}
+		}
+		function render(cxt){
+			cxt.clearRect(0,0,800,600);
+			cxt.fillStyle = 'rgb(0,102,153)';
+			cxt.beginPath();
+		    cxt.arc(ball.x,ball.y,ball.r,0,2*Math.PI);
+			cxt.closePath();
+			cxt.fill();
+		}
+	}
+	</script>
+</body>
+</html>
