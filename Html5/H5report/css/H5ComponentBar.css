@@ -1,0 +1,53 @@
+/* 柱状组件样式 */
+
+.h5_component_bar{}
+
+.h5_component_bar .line{
+	line-height: 20px;
+	margin-bottom: 15px;
+	font-size: 15px;
+}
+.h5_component_bar .line .name,.rate,.per{
+	display: inline-block;
+	vertical-align: middle;
+}
+.h5_component_bar .name{
+	width: 80px;
+	text-align: center;
+	margin-right: 4px;
+}
+.h5_component_bar .rate{
+	height: 20px;
+	margin-right: 10px;
+}
+.h5_component_bar .bgcolor{
+	height: inherit;
+	width: 0;
+	background: #99c0ff;
+}
+.h5_component_bar .per{
+	color: #99c0ff;
+	opacity: 0;
+}
+
+.h5_component_bar_load .bgcolor{
+	transition: all 1s;
+	width: 100%;
+}
+
+.h5_component_bar_leave .bgcolor{
+	transition: all 1s;
+	width: 0;
+}
+
+.h5_component_bar_load .per{
+	transition: all .5s 1s;
+	opacity: 1;
+}
+
+.h5_component_bar_leave .per{
+	transition: all 1s;
+	opacity: 0;
+}
+
+
