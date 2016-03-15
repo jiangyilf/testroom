@@ -41,6 +41,36 @@
         </div>
 
         <script type="text/javascript">
+            $(function(){
+            var cfg_polyline = {
+                type:'polyline',
+                data:[
+                    ['Javscript', .3 ,'#ff7676'],
+                    ['HTML5', .1 ],
+                    ['jquery', .2 ],
+                    ['php', .15 ],
+                    ['boortstrap', .2 ],
+                    ['CSS', .05 ]
+                ],
+                width:530,
+                height:600,
+                css:{top:150,opacity: 1},
+                /*animationIn:{opacity: 1},
+                animationOut:{opacity: 0}, */
+                center:true
+            }
+
+
+            $('.iphone').append(  new H5ComponentPolyline( 'Polyline', cfg_polyline ) );
+
+
+            var leave = true;
+            $('body').click(function (){
+                leave = !leave;
+                $('.h5_component').trigger( leave ? 'onLeave' : 'onLoad' )
+            });
+            $('body').click();
+        });
 
 
         </script>
