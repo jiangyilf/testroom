@@ -11,5 +11,19 @@
 	position: absolute;
 	font-size: 12px;
 	text-align: center;
+	opacity: 0;
 	transform: scale(0.8);
+	transition: all 1s .5s;
 }
+.h5_component_polyline_load .polyline-item-name{
+	opacity: 1;
+}
+.h5_component_polyline_leave .polyline-item-name{
+	opacity: 0;
+}
+
+
+
+
+
+

@@ -52,63 +52,93 @@ var H5ComponentPolyline = function(name,cfg){
 	canvas.height = ctx.height = h;
 	component.append(canvas);
 
-	
-	//绘制点
-	var row_w = w/(length+1);
-	for(var i=0;i<length;i++){
-		x = row_w * i + row_w;
-		y = h - h*cfg.data[i][1];
+	/*per 动画的百分比*/
+	function draw( per ){
+		//绘制点
+		ctx.clearRect(0,0,w,h);
+		var row_w = w/(length+1);
+		for(var i=0;i<length;i++){
+			x = row_w * i + row_w;
+			y = h - h*cfg.data[i][1]*per;
 
+			ctx.beginPath();
+			ctx.arc(x,y,8,0,2*Math.PI,false);
+			ctx.closePath();
+			ctx.fillStyle = "#F00";
+			ctx.fill();
+		}
+		//连线 及阴影
 		ctx.beginPath();
-		ctx.arc(x,y,8,0,2*Math.PI,false);
+		ctx.lineWidth = 1;
+		ctx.strokeStyle = '#F00';
+
+		ctx.moveTo(row_w,h - h*cfg.data[0][1] * per);
+
+		for(var i=0;i<length;i++){
+			x = row_w * i + row_w;
+			y = h - h*cfg.data[i][1] * per;
+			ctx.lineTo(x,y);
+		}
+		ctx.stroke();
+
+		ctx.lineTo(x,h);
+		ctx.lineTo(row_w,h);
 		ctx.closePath();
-		ctx.fillStyle = "#F00";
+		ctx.fillStyle = "rgba(255, 118, 118, 0.2)";
+		ctx.fill();
+	
+		//绘制数据
+		ctx.beginPath();
+
+		for(var i=0;i<length;i++){
+			x = row_w * i + row_w;
+			y = h - h*cfg.data[i][1] * per;
+			ctx.strokeStyle = cfg.data[i][2] ? cfg.data[i][2] : '#595959';
+			ctx.strokeText(cfg.data[i][1]*100+'%',x - 10,y - 20);
+		}
+		
 		ctx.fill();
 	}
 
-	//连线 及阴影
-
-	ctx.beginPath();
-	ctx.lineWidth = 1;
-	ctx.strokeStyle = '#F00';
-
-	ctx.moveTo(row_w,h - h*cfg.data[0][1]);
-
-	for(var i=0;i<length;i++){
-		x = row_w * i + row_w;
-		y = h - h*cfg.data[i][1];
-		ctx.strokeText(cfg.data[i][1]*100+'%',x - 10,y - 20);
-		ctx.lineTo(x,y);
-	}
-	ctx.stroke();
-
-	ctx.lineTo(x,h);
-	ctx.lineTo(row_w,h);
-	ctx.closePath();
-	ctx.fillStyle = "rgba(255, 118, 118, 0.2)";
-	ctx.fill();
-	
-	//绘制数据
-	ctx.beginPath();
-
-	for(var i=0;i<length;i++){
-		x = row_w * i + row_w;
-		y = h - h*cfg.data[i][1];
-		ctx.strokeStyle = cfg.data[i][2] ? cfg.data[i][2] : '#595959';
-		ctx.strokeText(cfg.data[i][1]*100+'%',x - 10,y - 20);
-	}
-	
-	ctx.fill();
-
-	for(var i=0;i<length;i++){
-		x = row_w * i + row_w;
-		y = h - h*cfg.data[i][1];
+	//draw(1);
+	//绘制动画效果
+    /*var timer ,i, load,leave;
+	function animation(){
+		timer = window.requestAnimationFrame(animation);
+		i += 0.02;
 		
-		ctx.strokeText(cfg.data[i][1]*100+'%',x - 10,y - 20);
-	}
-	component.addEventListener('onLoad',function(){
-		var timer = window.requestAnimationFrame();
+		if(i>1){
+			window.cancelAnimationFrame(timer);
+		} 
+		draw(i);
+	}*/
+
+	component.on('onLoad',function(){
+		/*load = 0;
+		animation();*/
+		var i=0;
+		timer = setInterval(function(){
+			i += 0.1;
+			if(i>1){
+				clearInterval(timer);	
+			}
+			draw(i);
+		},50);
 	});
+
+	component.on('onLeave',function(){
+		/*leave = 1;
+		animation();*/
+		var i=1;
+		timer = setInterval(function(){
+			i -= 0.1;
+			if(i<0){
+				clearInterval(timer);	
+			}
+			draw(i);
+		},50);
+	});
+
 
 
 	return component;
