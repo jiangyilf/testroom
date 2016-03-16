@@ -5,7 +5,9 @@ var H5ComponentRadar = function(name,cfg){
 	var w = cfg.width;
 	var h = cfg.height;
 	var length = cfg.data.length;
-	var x,y;
+	var x,y,
+		r = w/2;
+	var step = 10;
 	//创建画布
 	var canvas = document.createElement('canvas');
 	var ctx = canvas.getContext('2d');
@@ -13,11 +15,56 @@ var H5ComponentRadar = function(name,cfg){
 	canvas.height = ctx.height = h;
 	component.append(canvas);
 
-	//绘制背景   水平网格线
+	//绘制背景   
 	
- 	var step = 10 //水平网格线 100份 ==> 10
- 	ctx.beginPath();
+ 	
+ 	/*ctx.beginPath();
     ctx.lineWidth = 1;
+    ctx.arc(r,r,r,0,2*Math.PI,false);
+    ctx.stroke();*/
+
+    /*  计算一个多边形的坐标，以圆来确定
+    	已知圆心坐标（a,b），半径r,角度 deg
+    	rad = (2*Math.PI / 360) * (360/?)
+		x = a + Math.sin(rad) + r;
+		y = b + Math.cos(rad) + r;
+    */
+
+    /*ctx.beginPath();
+    for(var i=0;i<cfg.data.length;i++){
+
+    	rad = (2*Math.PI / 360) * (360/cfg.data.length) * i
+		x = r * Math.sin(rad) + r;
+		y = r * Math.cos(rad) + r;
+		//ctx.arc(x,y,5,0,2*Math.PI,false); //test
+		ctx.lineTo(x,y);
+    	
+    }
+    ctx.closePath();
+    ctx.stroke();*/
+
+    function drawRadar(cfg,scale = 1,isBlue = false){
+	    ctx.beginPath();
+	    for(var i=0;i<cfg.data.length;i++){
+
+	    	rad = (2*Math.PI / 360) * (360/cfg.data.length) * i
+			x = r + Math.sin(rad) * r * scale;
+			y = r + Math.cos(rad) * r * scale;
+			//ctx.arc(x,y,5,0,2*Math.PI,false); //test
+			ctx.lineTo(x,y);
+	    }
+	    ctx.closePath();
+	    ctx.fillStyle = (isBlue = !isBlue) ? '#99c0ff':'#f1f9ff';
+	    ctx.fill();
+    }
+
+    var isBlue = false;
+    for( step ; step>0 ; step--){
+    	isBlue = !isBlue;
+    	drawRadar(cfg,step/10,isBlue);
+    }
+    
+    
     
 
 	/*per 动画的百分比*/
