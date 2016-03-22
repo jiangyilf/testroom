@@ -8,4 +8,18 @@
 	height: 100%;
 }
 
+.h5_component_rader .radar-title{
+	width: 60px;
+	position: absolute;
+	text-align: center;
+	z-index: 1;
+	transition: all 1s .5s;
+	opacity: 0;
+}
 
+.h5_component_rader_load .radar-title{
+	opacity: 1;
+}
+.h5_component_rader_leave .radar-title{
+	opacity: 0;
+}

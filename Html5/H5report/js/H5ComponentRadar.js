@@ -26,8 +26,8 @@ var H5ComponentRadar = function(name,cfg){
     /*  计算一个多边形的坐标，以圆来确定
     	已知圆心坐标（a,b），半径r,角度 deg
     	rad = (2*Math.PI / 360) * (360/?)
-		x = a + Math.sin(rad) + r;
-		y = b + Math.cos(rad) + r;
+		x = a + Math.sin(rad) * r;
+		y = b + Math.cos(rad) * r;
     */
 
     /*ctx.beginPath();
@@ -43,6 +43,8 @@ var H5ComponentRadar = function(name,cfg){
     ctx.closePath();
     ctx.stroke();*/
 
+
+    //绘制雷达背景
     function drawRadar(cfg,scale = 1,isBlue = false){
 	    ctx.beginPath();
 	    for(var i=0;i<cfg.data.length;i++){
@@ -64,15 +66,71 @@ var H5ComponentRadar = function(name,cfg){
     	drawRadar(cfg,step/10,isBlue);
     }
     
-    
-    
+    //绘制伞状图
+    for(var i=0;i<cfg.data.length;i++){
+    	ctx.beginPath();
+    	ctx.moveTo(r,r);
+    	rad = (2*Math.PI / 360) * (360/cfg.data.length) * i
+		x = r + Math.sin(rad) * r ;
+		y = r + Math.cos(rad) * r ;
+		ctx.lineTo(x,y);
+		ctx.strokeStyle = '#eee';
+		ctx.stroke();
+		var radarTitle = $('<div class="radar-title">'+ cfg.data[i][0] +'</div>');
+		if(x > w/2){
+			radarTitle.css('left',x/2);
+		} else {
+			radarTitle.css('right',(w-x)/2);
+		}
+		if(y > h/2){
+			radarTitle.css('top',y/2);
+		} else {
+			radarTitle.css('bottom',(h-y)/2);
+		}
+		
+		component.append(radarTitle);
+    }
 
+    //创建画布
+	var canvas = document.createElement('canvas');
+	var ctx = canvas.getContext('2d');
+	canvas.width = ctx.width = w;
+	canvas.height = ctx.height = h;
+	component.append(canvas);
+
+    //绘制数据点
 	/*per 动画的百分比*/
 	function draw( per ){
-		
+		ctx.clearRect(0,0,w,h);
+
+		for(var i=0;i<cfg.data.length;i++){
+	    	ctx.beginPath();
+	    	rad = (2*Math.PI / 360) * (360/cfg.data.length) * i
+			x = r + Math.sin(rad) * r * cfg.data[i][1] * per;
+			y = r + Math.cos(rad) * r * cfg.data[i][1] * per;
+			ctx.arc(x,y,5,0,2*Math.PI,false);
+			ctx.fillStyle = '#ff7676';
+			ctx.fill();
+			ctx.closePath();
+	    }
+
+	    ctx.beginPath();
+	    for(var i=0;i<cfg.data.length;i++){
+	    	rad = (2*Math.PI / 360) * (360/cfg.data.length) * i
+			x = r + Math.sin(rad) * r * cfg.data[i][1] * per;
+			y = r + Math.cos(rad) * r * cfg.data[i][1] * per;
+			ctx.lineTo(x,y);
+	    }
+	    ctx.closePath();
+	    ctx.strokeStyle = '#ff7676';
+	    ctx.fillStyle = 'rgba(255, 118, 118, 0.2)';
+	    ctx.fill();
+	    ctx.stroke();
+
 	}
 
 
+	//draw(1);
 	component.on('onLoad',function(){
 		var i=0;
 		timer = setInterval(function(){

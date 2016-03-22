@@ -41,6 +41,36 @@
         </div>
 
         <script type="text/javascript">
+            $(function(){
+            var cfg_pie = {
+                type:'pie',
+                data:[
+                    ['Javscript', .3 ,'#ff7676'],
+                    ['HTML5', .1 ],
+                    ['jquery', .2 ],
+                    ['php', .15 ],
+                    ['boortstrap', .2 ],
+                    /*['CSS', .05 ]*/
+                ],
+                width:530,
+                height:530,
+                css:{top:150,opacity: 1,top:100},
+                animationIn:{opacity: 1,top:100},
+                animationOut:{opacity: 0,top:200}, 
+                center:true
+            }
+
+
+            $('.iphone').append(  new H5ComponentPie( 'pie', cfg_pie ) );
+
+
+            var leave = true;
+            $('body').click(function (){
+                leave = !leave;
+                $('.h5_component').trigger( leave ? 'onLeave' : 'onLoad' )
+            });
+            $('body').click();
+        });
 
 
         </script>
