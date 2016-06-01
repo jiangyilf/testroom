@@ -71,7 +71,25 @@ var ImgFigure = React.createClass({
     }
 });
 
-
+var ControllerUnit = React.createClass({
+    handleOnClick:function(e){
+        if(this.props.arrange.isCenter){
+            this.props.inverse();
+        }else{
+            this.props.center();
+        }
+        e.stopPropagation();
+        e.preventDefault();
+    },
+    render:function(){
+        var liClassName = ' ';
+        
+        if(this.props.arrange.isCenter){
+            liClassName = 'nav-point';
+        }
+        return(<li className={liClassName} onClick={this.handleOnClick}>index-{this.props.data}</li>)
+    }
+});
 
 var AppComponent = React.createClass({
   Constant: {
@@ -228,7 +246,7 @@ var AppComponent = React.createClass({
     this.rearrange(0);
   },
   render: function() {
-    var controllerUnits = [],
+    var ControllerUnits = [],
         ImgFigures = [];
 
     imagesDate.forEach(function(value,index){
@@ -246,7 +264,9 @@ var AppComponent = React.createClass({
 
         ImgFigures.push(<ImgFigure data={value} ref={'imgfiguer'+ index} key={index}
                         arrange={this.state.imgsArrangeArr[index]}
-                        inverse={this.inverse(index)} center={this.center(index)}/>)
+                        inverse={this.inverse(index)} center={this.center(index)}/>);
+        ControllerUnits.push(<ControllerUnit key={index} data={index} arrange={this.state.imgsArrangeArr[index]}
+                        inverse={this.inverse(index)} center={this.center(index)}/>);
     }.bind(this));
 
     return (
@@ -255,7 +275,9 @@ var AppComponent = React.createClass({
                 {ImgFigures}
             </section>
         	<nav className="controller-nav">
-                {controllerUnits}
+                <ul>
+                {ControllerUnits}
+                </ul>
             </nav>
     	</section>
     );

@@ -87,7 +87,23 @@ html,body{
 
 	width:100%;
 	text-align:center;
+	ul{
+		margin: 0;padding:0;
+	}
+	li{
+		display: inline-block;
+		margin: 0 10px;
+		cursor: pointer;
+	}
 
+	@at-root{
+		.nav-point{
+			background:rgb(175, 175, 175);
+		}
+		.nav-inverse{
+			background:rgb(105, 100, 100);
+		}
+	}
 }
 /* controller end */
 
