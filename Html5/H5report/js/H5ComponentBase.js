@@ -20,7 +20,7 @@ var H5ComponentBase = function(name,cfg){
 		})
 	}
 	//自定义参数
-	if(typeof cfg.click === 'function'){
+	if(typeof cfg.onclick === 'function'){
 		component.on('click',cfg.onclick);
 	}
 

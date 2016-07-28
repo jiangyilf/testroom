@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Swiper</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.2.0/css/swiper.min.css">
+<style type="text/css">
+*{padding: 0;margin: 0;}
+
+.swiper-slide img{width: 100%;}
+</style>
+</head>
+<body>
+<div class="swiper-container">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide"><img src="./images/img_1.jpg"></div>
+        <div class="swiper-slide"><img src="./images/img_2.jpg"></div>
+        <div class="swiper-slide"><img src="./images/img_3.jpg"></div>
+        <div class="swiper-slide"><img src="./images/img_4.jpg"></div>
+        <div class="swiper-slide"><img src="./images/img_5.jpg"></div>
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+    
+    <!-- If we need navigation buttons -->
+    <!-- <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div> -->
+    
+    <!-- If we need scrollbar -->
+    <!-- <div class="swiper-scrollbar"></div> -->
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.2.0/js/swiper.jquery.js"></script>	
+<script>
+	$(document).ready(function () {
+		var mySwiper = new Swiper ('.swiper-container', {
+		    pagination: '.swiper-pagination',
+        	paginationClickable: true
+		}) 
+	});
+</script>
+</body>
+</html>

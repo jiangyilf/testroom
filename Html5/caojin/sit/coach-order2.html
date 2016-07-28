@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>教练信息</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<!-- <link rel="shortcut icon" href="/favicon.ico"> -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="assets/css/light7.css">
+<link rel="stylesheet" href="./css/app.css">
+</head>
+<body>
+<!-- 你的html代码 -->
+<div class="page">
+<div class="content">
+	<div class="m-order-header">
+		<div class="m-order-row">
+			<div>收货人：哇咔咔</div>
+			<div>12345678909</div>	
+		</div>
+		<div class="m-order-row">
+			<div>场地：西源大道训练场</div>
+		</div>
+	</div>
+	<div class="m-order-body">
+		<div class="g-item-row">
+			<div>教练：</div>
+			<div>张师傅</div>	
+		</div>
+		<div class="g-item-row">
+			<div>预约练车时间：</div>
+			<input class="u-time-input" type="text" id="u-reserve-day" placeholder="选择预约时间" />
+		</div>
+		<div class="g-list-block u-time-select">
+			<div class="g-item-row">
+				<div>预约练车时间：</div>
+				<span>添加</span>
+			</div>
+			<div class="u-price-row">
+				<div class="u-price-name">9:00~10:45</div>
+			    <div class="u-price-info"><span class="m-color-orange">¥38.00</span><a href="#" class="btn-unlock">取消</a></div>
+		    </div>
+		    <div class="u-price-row">
+				<div class="u-price-name">9:00~10:45</div>
+			    <div class="u-price-info"><span class="m-color-orange">¥38.00</span><a href="#" class="btn-unlock">取消</a></div>
+		    </div>
+		    <div class="u-price-row">
+				<div class="u-price-name">9:00~10:45</div>
+			    <div class="u-price-info"><span class="m-color-orange">¥38.00</span><a href="#" class="btn-unlock">取消</a></div>
+		    </div>
+		</div>
+		<div class="g-item-row">
+			<div>付费方式</div>
+			<div class="m-color-orange">先付款后学车</div>	
+		</div>
+		<div class="g-item-row">
+			<div>购买数量</div>
+			<div>共计<span class="m-color-orange">3</span>课时</div>	
+		</div>
+
+		<div class="u-price-total">
+			合计：<span class="m-color-orange">¥2018.00</span>
+		</div>
+	</div>
+	<div class="m-order-bar">
+		<div class="u-price-sub">
+			合计：<span class="m-color-orange">¥2018.00</span>
+		</div>
+		<div class="btn-order-sub"> 确认 </div>
+	</div>
+</div>	
+</div>
+<script type='text/javascript' src='http://cdn.bootcss.com/jquery/3.1.0/jquery.min.js' charset='utf-8'></script>
+<script>
+  $.config = {
+    dayNames:['星期一','星期二','星期三','星期四','星期五','星期六','星期日']
+  }
+</script>
+<script type='text/javascript' src='assets/js/light7.min.js' charset='utf-8'></script>
+<script>
+	$('#u-reserve-day').calendar({
+		monthNames:['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月' , '9月' , '10月', '11月', '12月'],
+		dayNames:['星期一','星期二','星期三','星期四','星期五','星期六','星期日'],
+		dayNamesShort:['周一','周二','周三','周四','周五','周六','周日'],
+		dateFormat:'yyyy年mm月dd日',
+		onChange:function(p, values, displayValues){
+			console.log(displayValues)
+		}
+	});
+	
+</script>
+</body>
+</html>

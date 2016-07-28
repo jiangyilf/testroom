@@ -1,0 +1,196 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+  <title>教练中心</title>
+
+  <!-- Set render engine for 360 browser -->
+  <meta name="renderer" content="webkit">
+
+  <!-- No Baidu Siteapp-->
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+  <link rel="icon" type="image/png" href="assets/i/favicon.png">
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" sizes="192x192" href="assets/i/app-icon72x72@2x.png">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+  <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+
+  <!-- Tile icon for Win8 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="assets/i/app-icon72x72@2x.png">
+  <meta name="msapplication-TileColor" content="#0e90d2">
+
+  <link rel="stylesheet" href="assets/css/amazeui.min.css">
+  <link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body class="am-with-fixed-navbar">
+<header data-am-widget="header" class="am-header am-header-default ">
+  <h1 class="am-header-title">教练个人中心</h1>
+</header>
+<section>
+  <div data-am-widget="tabs"
+     class="am-tabs am-tabs-default am-no-layout" id="tab-coach" style="margin: 0;">
+    <ul class="am-tabs-nav am-cf" id="coach-nav">
+        <li class="am-active"><a href="[data-tab-panel-0]" id="index0">课时设置</a></li>
+        <li class=""><a href="[data-tab-panel-1]" id="index1">订单信息</a></li>
+        <li class=""><a href="[data-tab-panel-2]" id="index2">我的信息</a></li>
+    </ul>
+    <div class="am-tabs-bd im-tabs-bd">
+    	<!-- 课时设置 -->
+        <div data-tab-panel-0 class="am-tab-panel im-tab-panel am-active">
+            <form class="am-g im-user-form">
+              <div class="am-u-ms-12 im-list">
+                <div>预约日期
+                <input type="text" class="am-form-field im-datepicker" placeholder="预约日期设置" data-am-datepicker required />
+                </div>
+              </div>
+              <div class="am-u-ms-12 im-setsub">
+                <div>一键设置科目
+                <select class="im-user-select" data-am-selected style="width: 100px;">
+                  <option value="a">科目一</option>
+                  <option value="b" selected>科二</option>
+                </select>
+                </div>
+              </div>
+              <div class="am-u-ms-12 im-setsub">
+                <div>一键价格 <input type="tel" class="im-price" value="2600"><a class="am-btn am-btn-sm im-button">修改</a></div>
+              </div>
+              <div class="am-u-ms-12 im-setsub">
+                <p>预约时段</p>
+                <ul class="am-list am-list-static im-user-info">
+                <li><b>6:00-6:40</b><select class="im-user-select" data-am-selected style="width: 100px;">
+                  <option value="a">科目一</option>
+                  <option value="b" selected>科二</option>
+                </select> <span>64元</span> <a class="am-btn am-btn-sm im-button">修改</a></li>
+                <li><b>6:00-6:40</b><select class="im-user-select" data-am-selected style="width: 100px;">
+                  <option value="a">科目一</option>
+                  <option value="b" selected>科二</option>
+                </select> <span>64元</span> <a class="am-btn am-btn-sm im-button">修改</a></li>
+                <li><b>6:00-6:40</b><select class="im-user-select" data-am-selected style="width: 100px;">
+                  <option value="a">科目一</option>
+                  <option value="b" selected>科二</option>
+                </select> <span>64元</span> <a class="am-btn am-btn-sm im-button">修改</a></li>
+                <li><b>6:00-6:40</b><select class="im-user-select" data-am-selected style="width: 100px;">
+                  <option value="a">科目一</option>
+                  <option value="b" selected>科二</option>
+                </select> <span>64元</span> <a class="am-btn am-btn-sm im-button">修改</a></li>
+                <li><b>6:00-6:40</b><select class="im-user-select" data-am-selected style="width: 100px;">
+                  <option value="a">科目一</option>
+                  <option value="b" selected>科二</option>
+                </select> <span>64元</span> <a class="am-btn am-btn-sm im-button">修改</a></li>
+                <li><b>6:00-6:40</b><select class="im-user-select" data-am-selected style="width: 100px;">
+                  <option value="a">科目一</option>
+                  <option value="b" selected>科二</option>
+                </select> <span>64元</span> <a class="am-btn am-btn-sm im-button">修改</a></li>
+                </ul>
+              </div>
+              <div class="am-u-ms-12">
+              <button type="buttom" class="am-btn am-btn-default am-center">提交</button>
+              </div>
+            </form> 
+        </div>
+        <!-- 订单信息 -->
+        <div data-tab-panel-1 class="am-tab-panel im-tab-panel">
+        	<div class="im-list-item">
+        		<div class="im-list-thumb">
+        			<a href="#" class="im-avatar">
+                        <img src="http://img3.douban.com/lpic/o637240.jpg" alt="我最喜欢的一张画"/>
+                      </a>
+        		</div>
+        		<div class="am-list-item-text im-list-main">
+        			<p class="im-list-info"><b>学员：江同学</b></p>
+	            	<p class="im-list-info"><b>科目：科目二</b></p>
+	            	<p class="im-list-info"><b>场地：成都高新区</b></p>
+	            	<p class="im-list-info"><b>时段：6:00-6:45</b></p>
+	            	<p class="im-list-info im-list-info-time">2016-7-8</p>
+	            	<p class="im-list-info im-list-info-price">68元</p>
+	            	<p class="im-list-info im-list-info-status">待练车</p>
+        		</div>
+            </div>
+            <div class="im-list-item">
+        		<div class="im-list-thumb">
+        			<a href="#" class="im-avatar">
+                        <img src="http://img3.douban.com/lpic/o637240.jpg" alt="我最喜欢的一张画"/>
+                      </a>
+        		</div>
+        		<div class="am-list-item-text im-list-main">
+        			<p class="im-list-info"><b>学员：江同学</b></p>
+	            	<p class="im-list-info"><b>科目：科目二</b></p>
+	            	<p class="im-list-info"><b>场地：成都高新区</b></p>
+	            	<p class="im-list-info"><b>时段：6:00-6:45</b></p>
+	            	<p class="im-list-info im-list-info-time">2016-7-8</p>
+	            	<p class="im-list-info im-list-info-price">68元</p>
+	            	<p class="im-list-info im-list-info-status">进行中</p>
+        		</div>
+            </div>
+            <div class="im-list-item">
+        		<div class="im-list-thumb">
+        			<a href="#" class="im-avatar">
+                        <img src="http://img3.douban.com/lpic/o637240.jpg" alt="我最喜欢的一张画"/>
+                      </a>
+        		</div>
+        		<div class="am-list-item-text im-list-main">
+        			<p class="im-list-info"><b>学员：江同学</b></p>
+	            	<p class="im-list-info"><b>科目：科目二</b></p>
+	            	<p class="im-list-info"><b>场地：成都高新区</b></p>
+	            	<p class="im-list-info"><b>时段：6:00-6:45</b></p>
+	            	<p class="im-list-info im-list-info-time">2016-7-8</p>
+                <p class="im-list-info im-list-info-price">68元</p>
+                <p class="im-list-info im-list-info-status">已完成</p>
+        		</div>
+            </div>
+        </div>
+        <!-- 我的信息 -->
+        <div data-tab-panel-2 class="am-tab-panel im-tab-panel">
+          	<ul class="am-list am-list-static im-user-info">
+				<li><b>电话</b><b class="im-right">12345678761</b></li>
+				<li><b>姓名</b><b class="im-right">蒋先生</b></li>
+				<li><b>性别</b><b class="im-right">男</b></li>
+				<li><b>城市</b><b class="im-right">成都</b></li>
+        <li><b>驾校</b><b class="im-right">长征</b></li>
+        <li><b>驾龄</b><b class="im-right">5年</b></li>
+			</ul>
+        </div>
+    </div>
+</div>
+</section>
+<div data-am-widget="navbar" class="am-navbar am-cf am-navbar-default im-bottom-bar" id="coach-bar">
+    <ul class="am-navbar-nav am-cf am-avg-sm-2">
+        <li >
+          <a href="#" class="am-active">
+            <span class="am-navbar-label">科目设置</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="">
+              <span class="am-navbar-label">套餐设置</span>
+          </a>
+        </li>
+    </ul>
+</div>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/amazeui.min.js"></script>
+<script type="text/javascript">
+$(function(){
+  $('#coach-nav').on('click',function(e){
+    if(e.target.id == 'index0'){
+      $('#coach-bar').show();
+    }else{
+      $('#coach-bar').hide();
+    }
+  })
+})
+</script>
+</body>
+</html>

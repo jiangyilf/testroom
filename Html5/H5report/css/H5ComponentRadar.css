@@ -1,6 +1,6 @@
 /* 雷达图组件样式 */
-.h5_component_rader {}
-.h5_component_rader canvas{
+.h5_component_radar {}
+.h5_component_radar canvas{
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -8,7 +8,7 @@
 	height: 100%;
 }
 
-.h5_component_rader .radar-title{
+.h5_component_radar .radar-title{
 	width: 60px;
 	position: absolute;
 	text-align: center;
@@ -17,9 +17,9 @@
 	opacity: 0;
 }
 
-.h5_component_rader_load .radar-title{
+.h5_component_radar_load .radar-title{
 	opacity: 1;
 }
-.h5_component_rader_leave .radar-title{
+.h5_component_radar_leave .radar-title{
 	opacity: 0;
 }

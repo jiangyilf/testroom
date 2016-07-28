@@ -1,0 +1,123 @@
+ul{
+     list-style: none;
+     padding: 0;
+ }
+.am-container{
+    padding: 0;
+}
+.flex-box{
+    display: -webkit-box;
+    display: -moz-box;
+    display: flex;
+    align-content:center;
+    margin: 10px auto;
+}
+.header-pic,.coach-info,.calling{
+    position: relative;
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 5px;
+    margin: 0;
+}
+.header-pic{
+    -webkit-box-flex:3;
+    -moz-box-flex:3;
+    -ms-box-flex:3;
+    flex: 3;
+}
+.coach-info{
+    -webkit-box-flex:6;
+    -moz-box-flex:6;
+    -ms-box-flex:6;
+    flex: 6;
+}
+.calling{
+    -webkit-box-flex:2;
+    -moz-box-flex:2;
+    -ms-box-flex:2;
+    flex: 2;
+}
+.coach-info ul,.calling a{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.item{
+
+}
+.border-orient-top:before,
+.border-orient-bt:after,
+.border-vertical-lf:before,
+.border-vertical-rt:after
+{
+    content:"";
+    position: absolute;
+    background: #ccc;
+    -webkit-transform-origin:0 0;
+    transform-origin:0 0;
+}
+.border-orient-top:before{
+    top:0;
+    left:0;
+    right:0;
+    height: 1px;
+    -webkit-transform:scaleY(.5);
+    transform:scaleY(.5);
+}
+
+.border-orient-bt:after{
+    bottom:0;
+    left:0;
+    right:0;
+    height: 1px;
+    -webkit-transform:scaleY(.5);
+    transform:scaleY(.5);
+}
+.border-vertical-lf:before{
+    top:0;
+    left:0;
+    bottom:0;
+    height: 100%;
+    width: 1px;
+    -webkit-transform:scaleX(.5);
+    transformX:scaleX(.5);
+}
+.border-vertical-rt:after{
+    top:0;
+    right:0;
+    bottom:0;
+    height: 100%;
+    width: 1px;
+    -webkit-transform:scaleX(.5);
+    transformX:scaleX(.5);
+}
+.state-info{
+    position: relative;
+}
+.visited,.order-quantity{
+    position: relative;
+    -webkit-box-flex:1;
+    -moz-box-flex:1;
+    -ms-box-flex:1;
+    flex: 1;
+    text-align: center;
+    padding: 12px 6px;
+}
+.accordion{
+    margin: 0;
+}
+.accordion .am-accordion-item {
+    border: none!important;
+    border-top: 1px solid #dedede!important;
+    margin:0;
+}
+.am-table caption{
+    text-align: left;
+    font-size:18px;
+    padding: .7rem;
+
+}
+.am-table>tbody>tr>td{
+    border: none;
+}

@@ -1,1 +1,38 @@
 /*loading动画样式*/
+.loading{
+	width: 100%;
+	height: 100%;
+	background-color:#f4f3f2 ;
+}
+.double-bounce1,.double-bounce2{
+
+	background: #f96154;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	border-radius: 50%;
+}
+.load-rate{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+.double-bounce1{
+	background-color: rgba(249, 97, 84, 0.7);
+	animation: rate1 ease infinite .7s reverse;
+}
+.double-bounce2{
+	background-color: rgba(249, 97, 84, 0.8);
+	animation: rate2 ease infinite .7s reverse;
+}
+
+@keyframes rate1{
+	0%{width: 0;height: 0;}
+	100%{width: 80px;height: 80px;}
+}
+@keyframes rate2{
+	0%{width: 80px;height: 80px;}
+	100%{width: 0;height: 0;}
+}
