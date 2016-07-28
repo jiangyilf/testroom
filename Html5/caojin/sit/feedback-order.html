@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>预约练车</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<!-- <link rel="shortcut icon" href="/favicon.ico"> -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="assets/css/light7.css">
+<link rel="stylesheet" href="./css/app.css">
+</head>
+<body>
+<!-- 你的html代码 -->
+<div class="page">
+<div class="content">
+	<div class="u-feedback-from">
+		<div class="g-item-row">
+			<div>预约练车时间：</div>
+			<input class="u-time-input" type="text" id="u-reserve-day" placeholder="选择预约时间" />
+		</div>
+		<div class="g-item-row">
+			<div>预约科目：</div>
+			<div class="item-input u-feedback-select">
+              <select>
+                <option>科目二</option>
+                <option>科目三</option>
+              </select>
+              <span class="icon icon-down"></span>
+            </div>
+		</div>
+		<div class="list-block media-list u-feedback-checkbox">
+			<ul>	
+				<li class="u-h3">预约练车时段：</li>
+				<li>
+					<label class="label-checkbox item-content">
+						<div class="item-inner">10:00-12:00</div>
+						<input type="checkbox" name="checkbox">
+						<div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+					</label>
+				</li>
+				<li>
+					<label class="label-checkbox item-content">
+						<div class="item-inner">10:00-12:00</div>
+						<input type="checkbox" name="checkbox">
+						<div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+					</label>
+				</li>
+				<li>
+					<label class="label-checkbox item-content">
+						<div class="item-inner">10:00-12:00</div>
+						<input type="checkbox" name="checkbox">
+						<div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+					</label>
+				</li>
+			</ul>
+	    </div>
+	    <div class="u-feedback-sub">确定</div>
+	</div>
+</div>	
+</div>
+
+</div>
+<script type='text/javascript' src='http://cdn.bootcss.com/jquery/3.1.0/jquery.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='assets/js/light7.min.js' charset='utf-8'></script>
+<script>
+  $.config = {
+    dayNames:['星期一','星期二','星期三','星期四','星期五','星期六','星期日']
+  }
+</script>
+<script type='text/javascript' src='assets/js/light7.min.js' charset='utf-8'></script>
+<script>
+	$('#u-reserve-day').calendar({
+		monthNames:['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月' , '9月' , '10月', '11月', '12月'],
+		dayNames:['星期一','星期二','星期三','星期四','星期五','星期六','星期日'],
+		dayNamesShort:['周一','周二','周三','周四','周五','周六','周日'],
+		dateFormat:'yyyy年mm月dd日',
+		onChange:function(p, values, displayValues){
+			console.log(displayValues)
+		}
+	});
+	
+</script>
+</body>
+</html>
