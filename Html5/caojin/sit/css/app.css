@@ -4,6 +4,11 @@
 .content{
 	background-color: #ebebeb;
 }
+.content-block{
+	padding: 0 .5rem;
+	margin: 0;
+	font-size: .8rem;
+}
 .g-header .loction{
 	color: #fff;
 	font-size: .8rem;
@@ -12,6 +17,8 @@
     padding: 0;
     line-height: 2.2rem;
     border: 0;
+    z-index: 10;
+    position: relative;
 }
 .g-header .loction .icon{
 	font-size: .8rem;
@@ -160,6 +167,36 @@
 	border: 1px solid #ff720e;
 	color: #ff720e;
 }
+/* popup */
+.loction-search input{
+	border: 1px dashed #007f67;
+	border-radius: 1rem;
+	text-align: center;
+}
+.loction-search .icon-search{
+	color: #007f67;
+}
+.u-loction-h3{
+	padding-left:.5rem;
+	color: #007f67;
+	background-color: #f2f2f2;
+}
+.u-loction-list{
+	margin: 0;
+	padding: 0;
+	flex-flow: row wrap;
+	list-style: none;
+	border: none;
+}
+.u-loction-list li{
+	width: 50%;
+	padding: .2rem 0;
+	border-bottom: 1px solid #f2f2f2;
+	font-size: .7rem;
+}
+.u-loction-list li:last-child:nth-child(2n+1){
+	width: 100%;
+}
 
 /* -----------index css end -------- */
 
@@ -302,6 +339,32 @@
 	padding: .4rem;
 	background-color: #f6f6f6;
 }
+
+.list-block.media-list .u-inner-flex{
+	display: flex;
+	display: -webkit-flex;
+	justify-content: space-between;
+}
+.popup-order .u-order-list{
+	display: block;
+    height: 568px;
+    overflow-y: scroll;
+}
+.popup-order ul{
+	margin-bottom: 2rem;
+}
+.popup-order-sub{
+	position: fixed;
+	bottom: 0;
+	height: 2rem;
+	line-height: 2rem;
+	width: 100%;
+	background: #1e98e5;
+	color: #fff;
+	font-size: 1rem;
+	text-align: center;
+	
+}
 /* .btn-num-control:active{
 	background-color: #e0dfdf;
 }
@@ -320,7 +383,7 @@
 	padding-bottom: .5rem;
 	border-bottom: 1px solid #bcbcbc;
 }
-.u-feedback .g-item-block {
+.u-feedback .g-item-block{
 	padding-bottom: 0;
 }
 .u-feedback-content{
@@ -332,6 +395,9 @@
 }
 .u-feedback-content p{
 	margin-top: 0;
+}
+.u-feedback-content p:last-child{
+	margin: 0;
 }
 
 /*---------  user-index  start-------------*/
@@ -418,7 +484,7 @@
 }
 .u-feedback-checkbox .u-h3{
 	border: none;
-	padding: .5rem 0;
+	padding: .5rem 0 0;
 }
 label.label-checkbox i.icon-form-checkbox{
 	border: 1px solid #ff720e;

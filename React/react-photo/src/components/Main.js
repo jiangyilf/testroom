@@ -173,7 +173,6 @@ var AppComponent = React.createClass({
         if (imgsArrangeTopArr && imgsArrangeTopArr[0]) {
             imgsArrangeArr.splice(topImgSpliceIndex, 0, imgsArrangeTopArr[0]);
         }
-
         imgsArrangeArr.splice(centerIndex, 0, imgsArrangeCenterArr[0]);
 
         this.setState({
@@ -187,6 +186,7 @@ var AppComponent = React.createClass({
         this.setState({
             imgsArrangeArr: imgsArrangeArr
         });
+
     }.bind(this);
   },
   center:function(index){
