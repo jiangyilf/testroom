@@ -65,6 +65,9 @@
 }
 .g-clear{
 	border: none;
+	list-style: none;
+	padding: 0;
+	margin: 0;
 }
 /* .g-list-block li{width: 100%;} */
 .g-item-media{
@@ -198,10 +201,42 @@
 	width: 100%;
 }
 
-/* -----------index css end -------- */
+
+/* ----------- coach-index css -------- */
+.g-list-header{
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	padding: .5rem 0;
+	border-bottom: 1px solid #f2f2f2;
+	background-color: #fff;
+}
+ .g-list-header .btn-switch{
+ 	padding: .45rem .75rem ;
+	border: 1px solid #f2f2f2;
+	color: #333;
+ }
+ .g-list-header .active{
+ 	color: #fff;
+ 	background-color: #3097fd;
+ 	border: none;
+ }
+ .u-coach-set{
+ 	text-align: center;
+ 	margin-bottom: 0;
+ }
+.btn-mod{
+	border: 1px solid #b7b7b7;
+    padding: .1rem;
+    margin-left: .4rem;
+    color: #7d7d7d;
+    border-radius: .2rem;
+    font-size: .7rem;
+}
 
 
-/*------- coach css start---------*/
+
+/*------- coach css ---------*/
 .g-item-both{
 	flex: 1;
 	position: relative;
