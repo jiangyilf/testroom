@@ -63,12 +63,6 @@
 .g-center{
 	align-self: center;
 }
-.g-clear{
-	border: none;
-	list-style: none;
-	padding: 0;
-	margin: 0;
-}
 /* .g-list-block li{width: 100%;} */
 .g-item-media{
 	margin-left: .5rem;
@@ -212,7 +206,11 @@
 	background-color: #fff;
 }
  .g-list-header .btn-switch{
- 	padding: .45rem .75rem ;
+ 	width: 5.5rem;
+ 	height: 1.75rem;
+ 	line-height: 1.75rem;
+ 	font-size: .8rem;
+ 	text-align: center;
 	border: 1px solid #f2f2f2;
 	color: #333;
  }
@@ -291,7 +289,67 @@
 	color: #949494;
 	border-radius: 3px;
 }
-
+.g-clear{
+	border: none;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.u-couch-upload{
+	padding: 0 .5rem;
+	background: #fff;
+	overflow: hidden;
+}
+.u-couch-upload h3{
+	font-size: .7rem;
+	font-weight: normal;
+	margin-bottom: 0;
+}
+.m-input-img{
+	margin-top: .8rem;
+	flex: 1;
+}
+.u-upload-cl{
+	border: none;
+}
+.u-upload-cl label{
+	align-self: center;
+}
+.m-input-img:last-child{
+	padding-left: .5rem;
+}
+.m-input-img .img-box{
+	width: 100%;	
+}
+.m-input-img .img-box img{
+	display: block;
+	width: 100%;
+}
+.btn-upload{
+	display: block;
+	margin-top: .4rem;
+	text-align: center;
+	background: #2a89e6;
+	color: #fff;
+}
+.u-input-text{
+	width: 73%;
+	background: #eeeeee;
+	border: none;
+	outline: none;
+	padding: .4rem;
+	color: #b2b2b2;
+}
+.u-upload-sub {
+	display: block;
+    background: #1e97e4;
+    color: #fff;
+    text-align: center;
+    height: 2rem;
+    line-height: 2rem;
+    font-size: 1rem;
+    margin: 1rem 0;
+}
 /*------- coach css end---------*/
 
 .u-couch-info{
@@ -400,18 +458,6 @@
 	text-align: center;
 	
 }
-/* .btn-num-control:active{
-	background-color: #e0dfdf;
-}
-.btn-num-control:hover{
-	background-color: #e0dfdf;
-}
-.btn-num-control:focus{
-	background-color: #e0dfdf;
-}
-.btn-num-control:visited{
-	background-color: #e0dfdf;
-} */
 /*--------- coach-order end---------------*/
 .u-feedback{
 	margin: 0;
@@ -539,19 +585,86 @@ label.label-checkbox input[type="checkbox"]:checked + .item-media i.icon-form-ch
 	background-color: #3097fd;
 }
 
+/* ------coach log ------ */
+.u-coach-log > div{
+	padding:.5rem;
+}
+.u-coach-log .u-coach-avatar img{
+	display: block;
+	width: 2.5rem;
+}
+.u-coach-log .g-item{
+	padding-left: .2rem;
+}
+.u-coach-log  .u-datetime{
+	color: #b2b2b2;
+	font-size: .6rem;
+}
+.u-coach-log  .u-text{
+	font-size: .7rem;
+    line-height: .9rem;
+}
+.u-coach-log .u-media{
+	margin-top: .5rem;
+}
+.u-coach-log .u-media img{
+	width: 48%;
+	height: 5.4rem;
+	display: inline-block;
+}
+.u-coach-log-h3{
+	display: flex;
+	justify-content: space-between;
+	border: none;
+}
+.u-coach-log-h3 span{
+	align-self: center;
+	font-size: .8rem;
+} 
+.btn-coach-push{
+	background: #0894ec;
+    color: #fff;
+    padding: .2rem;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
+.u-log-push{
+	padding: .5rem;
+	background: #fff;
+	border-bottom: 1px solid #f2f2f2;
+}
+.u-log-push .push-text{
+	width: 100%;
+	border: none;
+	outline: none;
+}
+.u-log-push .image-box{
+	display: flex;
+	flex-flow: row wrap;
+}
+.u-log-push .image-box img{
+	width: 3.25rem;
+	height: 3.25rem;
+	margin-top: .4rem;
+	margin-left: .4rem;
+}
+.add-msg{
+	align-self: center;
+	padding: .4rem;
+	color: #b2b2b2;
+}
+.btn-push-sure{
+	position: fixed;
+    width: 100%;
+    bottom: .1rem;
+	display: block;
+    background: #1e97e4;
+    color: #fff;
+    text-align: center;
+    height: 2rem;
+    line-height: 2rem;
+    font-size: 1rem;
+    margin: 1rem 0;
+}
 
 
 
