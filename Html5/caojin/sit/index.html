@@ -482,13 +482,13 @@
      	</ul>
 	  	<div class="u-loction-h3" id="index1">A</div>
      	<ul class="g-item-block u-loction-list">
-     		<li>成都市</li>
-     		<li>成都市</li>
-     		<li>成都市</li>
-     		<li>成都市</li>
-     		<li>成都市</li>
-     		<li>成都市</li>
-     		<li>成都市</li>
+     		<li data-name="1">成都市</li>
+     		<li data-name="2">成都市</li>
+     		<li data-name="3">成都市</li>
+     		<li data-name="4">成都市</li>
+     		<li data-name="5">成都市</li>
+     		<li data-name="1">成都市</li>
+     		<li data-name="1">成都市</li>
      	</ul>
      	<div class="u-loction-h3" id="index2">B</div>
      	<ul class="g-item-block u-loction-list">
@@ -562,6 +562,12 @@
 		console.log('xxx')
 		$.popup('.popup-loction');
 	});
+	$('.u-loction-list').on('click',function(e){
+		var value = $(e.target).text();
+		console.log(value);
+		$.closeModal('.popup-loction');
+	})
+
 </script>
 </body>
 </html>
