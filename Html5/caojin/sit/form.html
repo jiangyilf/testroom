@@ -46,11 +46,19 @@
 		<label>身份证</label><input type="text" class="m-input-text" placeholder="请输入您的姓名">
 	</div>
 	<div class="m-form-item">
-		<label>住址</label><input type="text" class="m-input-text" placeholder="请输入您的住址">
+		<label>科目预约</label>
+		<div class="m-input-text u-flex">
+			<select class="m-select" id="subject-select" name="subject">
+				<option value="科目一" chicked>科目一</option>
+				<option value="科目二">科目二</option>
+				<option value="科目三">科目三</option>
+			</select>
+			<span class="icon icon-caret u-color-blue"></span>
+		</div>	
 	</div>
 	<div class="m-form-item">
 		<label>备注</label>
-		<div class="m-form-mark">
+		<div class="m-form-mark" id="subject">
 			<p>1、学员缴费报名后，可购买教练教学套餐。</p>
 			<p>2、直学自考学员缴费报名后，可自行购买科目练车。</p>
 			<p>3、身份证源文件、体检表、居住证线下收取</p>
@@ -63,5 +71,13 @@
 </div>
 <script type='text/javascript' src='http://cdn.bootcss.com/jquery/3.1.0/jquery.min.js' charset='utf-8'></script>
 <script type='text/javascript' src='assets/js/light7.min.js' charset='utf-8'></script>
+<script type="text/javascript">
+$(function(){
+	$('#subject-select').on('change',function(){
+		var title = [{'科目一':['<p>1、学员缴费报名后，可购买教练教学套餐。</p><p>2、直学自考学员缴费报名后，可自行购买科目练车。</p><p>3、身份证源文件、体检表、居住证线下收取</p>']},{'科目二':['<p>1、学员缴费报名后，可购买教练教学套餐。</p><p>2、直学自考学员缴费报名后，可自行购买科目练车。</p><p>3、身份证源文件、体检表、居住证线下收取</p>']},{'科目三':['<p>1、学员缴费报名后，可购买教练教学套餐。</p><p>2、直学自考学员缴费报名后，可自行购买科目练车。</p><p>3、身份证源文件、体检表、居住证线下收取</p>']}]
+		console.log($(this).val())
+	})
+})
+</script>
 </body>
 </html>
