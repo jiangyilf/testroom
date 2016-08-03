@@ -215,7 +215,7 @@
 	border: 1px solid #f2f2f2;
 	color: #333;
  }
- .g-list-header .active{
+ .g-list-header .u-active{
  	color: #fff;
  	background-color: #3097fd;
  	border: none;
@@ -232,8 +232,12 @@
     border-radius: .2rem;
     font-size: .7rem;
 }
-
-
+.switch-pannl{
+	display: none;
+}
+.switch-pannl.show{
+	display: block;
+}
 
 /*------- coach css ---------*/
 .g-item-both{
@@ -772,6 +776,124 @@ label.label-checkbox input[type="checkbox"]:checked + .item-media i.icon-form-ch
 .m-form-item .u-color-blue{
 	color: #1e97e4;
 }
+/* -------   coach-style ------- */
+
+.g-item-col{
+	display: flex;
+	flex-flow: column wrap;
+	text-align: center;
+	font-size: .8rem;
+}
+.u-coach-star:after{
+}
+.g-item-col{
+	/* flex: 1; */
+}
+.u-coach-nav{
+	font-size: .6rem;
+}
+.u-coach-nav .u-time{
+	margin: .4rem 0;
+	color: #f8a30a;
+}
+.u-coach-loction{
+	margin: .5rem 0;
+	display: block;
+	font-size: .6rem;
+	background: #fff;
+}
+.u-coach-loction .g-item-row{
+	padding: .3rem .5rem;
+}
+.u-coach-loction .loction-map{
+	padding: .4rem .5rem;
+	height: 7rem;
+}
+.u-coach-loction .u-loction{
+	text-align: right;
+	padding: 0 .5rem .4rem 0;
+}
+.m-taget-c1,.m-taget-c2{
+	padding: .1rem .2rem;
+    background: #f8a30a;
+    border-radius: 8px;
+    margin: 0 .2rem;
+}
+.m-taget-c2{
+	font-size: .6rem;
+	background: #ff7553;
+}
+.u-pic-box{
+	margin-top: 1rem;
+	padding: 0 .5rem;
+}
+.u-pic-box .u-pic-title{
+	width: 7rem;
+	height: 1rem;
+	background: url('../images/icon-target.png') no-repeat;
+	background-size: 100%;
+	background-position: top;
+	color: #fff;
+    font-size: .6rem;
+    line-height: 1rem;
+    padding-left: .5rem;
+}
+
+.u-pic-box .u-coach-pic{
+	margin-top: .5rem;
+	height: 7.5rem;
+	background-color: #eee;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
