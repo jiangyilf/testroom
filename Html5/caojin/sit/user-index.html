@@ -181,7 +181,7 @@
 				</div>
 				<div class="g-item-row">
 					<span>性别</span>
-					<div class="u-info">男 <span class="icon icon-right"></span></div>
+					<div class="u-info" id="u-sex">男 <span class="icon icon-right"></span></div>
 				</div>
 				<div class="g-item-row">
 					<span>城市</span>
@@ -193,7 +193,7 @@
 				</div>
 				<div class="g-item-row">
 					<span>驾龄</span>
-					<div class="u-info">8年 <span class="icon icon-right"></span></div>
+					<div class="u-info" id="u-age">8年 <span class="icon icon-right"></span></div>
 				</div>
 				<div class="g-item-row">
 					<span>教练类型</span>
@@ -207,5 +207,40 @@
 </div>
 <script type='text/javascript' src='http://cdn.bootcss.com/jquery/3.1.0/jquery.min.js' charset='utf-8'></script>
 <script type='text/javascript' src='assets/js/light7.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='assets/js/i18n/cn.js' charset='utf-8'></script>
+<script>
+	$(document).on('click','#u-age', function () {
+	     $.prompt('What is your name?', function (value) {
+	          $.alert('Your name is "' + value + '". You clicked Ok button');
+	    });
+	});
+
+
+	
+	$(document).on('click','#u-sex', function () {
+    $.modal({
+      title:  '请选择您的性别',
+      text: '<select id="dataVal"><option value="男">男</option><option value="女">女</option></select>',
+      buttons: [
+        {
+          text: '取消'
+        },
+        {
+          text: '确定',
+          onClick: function() {
+            console.log($('#dataVal').val())
+          }
+        }
+      ]
+    })
+    });
+
+    $(document).on('click','.prompt-title-ok-cancel', function () {
+	     $.prompt('请输入金额', function (value) {
+	          /*回调*/
+	          console.log('sss')
+	    });
+	});
+</script>
 </body>
 </html>
