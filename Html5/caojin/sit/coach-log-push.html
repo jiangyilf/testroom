@@ -18,15 +18,46 @@
 	<div class="u-log-push">
 		<textarea class="push-text" placeholder="说点什么风采吧..."></textarea>
 		<div class="image-box">
-			<img src="http://gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg">
-			<img src="http://gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg">
-			<span class="add-msg">添加照片</span>
+			<div id="inline-box" style="display: inline-block;">
+				<img src="http://gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg">
+				<img src="http://gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg">
+			</div>
+			<span class="add-msg ">
+				<input id="file_upload" class="file_upload" name="file_upload" type="file" multiple="true">
+			</span>
 		</div>
 		<a href="#" class="btn-push-sure">确定</a>
 	</div>
 </div>	
 </div>
 <script type='text/javascript' src='http://cdn.bootcss.com/jquery/3.1.0/jquery.min.js' charset='utf-8'></script>
+<script type="text/javascript" src="assets/uploadifive/jquery.uploadifive.min.js"></script>
 <script type='text/javascript' src='assets/js/light7.min.js' charset='utf-8'></script>
+<script type="text/javascript">
+	$('.file_upload').uploadifive({
+		'auto'			 : true,
+		'multi'			: true,//是否允许同时上传多文件
+		'fileSizeLimit'	: '5MB',
+		'fileType'		 : ["image\/jpg","image\/jpeg","image\/png"],
+		'uploadLimit'	  : 9, //同时上传文件数目限制。默认1一次可传几个文件。
+		'formData'         : {
+				ProjectName: 'olmpic2',
+				Resize: 'true',
+				Rotate:'true',
+			 	QiNiu:'true'
+		},
+		'uploadScript'	 : "http://uploads.event.cdsb.com/Home/Index/upload5.html ",
+		'onUploadComplete' : function(file, response) {
+			if(response.indexOf("上传文件格式不对！")>=0){
+				console.log('上传失败');
+			}else{
+				var data = JSON.parse(response);
+				var _html= '<img  src="'+data.resize+'" img-url="'+data.resize+'">';
+				console.log(_html)
+				$("#inline-box").append(_html);		
+			}
+		}
+	});
+</script>
 </body>
 </html>

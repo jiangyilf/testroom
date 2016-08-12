@@ -9,12 +9,13 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 <link rel="stylesheet" href="assets/css/light7.css">
+<link rel="stylesheet" href="assets/css/light7-swiper.min.css">
 <link rel="stylesheet" href="./css/app.css">
 </head>
 <body>
 <!-- 你的html代码 -->
 <div class="page">
-	<div class="content">
+	<div class="content infinite-scroll" data-distance="100">
 		<header class="g-item-row">
 			<div class="g-item-media u-coach-star"><img src="http://gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg"></div>
 			<div class="g-item-col"><div><span>小小江</span></div><div>*****</div><span>新款捷达</span></div>
@@ -53,9 +54,9 @@
 			    	</div>
 			        <div class="u-text">传达招生速成班45天轻松拿到驾照,学员们真的都很拼谢谢同学们的陪伴，让我成长很多。</div>
 			        <div class="u-media">
-						<img src="./images/upload-bg.png">
-						<img src="./images/upload-bg.png">
-						<img src="./images/upload-bg.png">
+						<img class="pb-standalone" src="./images/upload-bg.png">
+						<img class="pb-standalone" src="./images/upload-bg.png">
+						<img class="pb-standalone" src="./images/upload-bg.png">
 					</div>
 			    </div>	
 			</div>
@@ -74,11 +75,64 @@
 			    </div>	
 			</div>
 		</div>
+		<!-- preloader -->
+	    <div class="infinite-scroll-preloader">
+	        <div class="preloader"></div>
+	    </div>
 	</div>
 </div>
 
 <script type='text/javascript' src='http://cdn.bootcss.com/jquery/3.1.0/jquery.min.js' charset='utf-8'></script>
 <script type='text/javascript' src='assets/js/light7.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='assets/js/light7-swiper.min.js' charset='utf-8'></script>
+<script type="text/javascript">
+$(function(){
+	$.init();
+	var loading = false;
+	var maxItems = 100;
+	var itemsPerLoad = 20;
+	function addItems(number, lastIndex) {
+	    var html = '';
+	    /*这里写ajax请求*/
 
+	    $('.u-coach-log').append(html);
+	}
+
+	addItems(itemsPerLoad, 0);
+
+	var lastIndex = 20;
+
+	$(document).on('infinite', '.infinite-scroll',function() {
+	    // 如果正在加载，则退出
+	    if (loading) return;
+	    // 设置flag
+	    loading = true;
+	    setTimeout(function() {
+	        loading = false;
+	        if (lastIndex >= maxItems) {
+	            $.detachInfiniteScroll($('.infinite-scroll'));
+	            $('.infinite-scroll-preloader').remove();
+	            return;
+	        }
+	        addItems(itemsPerLoad, lastIndex);
+	        lastIndex = $('.u-coach-log .g-item-block').length;
+	    }, 1000);
+	});
+});
+$(function(){
+	//点击时打开图片浏览器
+	$('.u-coach-log .pb-standalone').on('click',function (e) {
+		var src = $(this)[0].src;
+		console.log(src)
+		var myPhotoBrowserStandalone = $.photoBrowser({
+	      photos : [
+          	src
+      	  ]
+		});
+	    myPhotoBrowserStandalone.open();
+	});
+})
+
+</script>
 </body>
 </html>

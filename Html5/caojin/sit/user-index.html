@@ -214,6 +214,11 @@
 	          $.alert('Your name is "' + value + '". You clicked Ok button');
 	    });
 	});
+	$(document).on('click','.btn-feedback', function () {
+	     $.prompt('What is your name?', function (value) {
+	          $.alert('Your name is "' + value + '". You clicked Ok button');
+	    });
+	});
 
 
 	

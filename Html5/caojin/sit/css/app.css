@@ -656,14 +656,18 @@ label.label-checkbox input[type="checkbox"]:checked + .item-media i.icon-form-ch
 	margin-top: .4rem;
 	margin-left: .4rem;
 }
+#inline-box{
+	display: inline-block;
+}
 .add-msg{
+	display: inline-block;
 	align-self: center;
 	padding: .4rem;
 	color: #b2b2b2;
 }
 .btn-push-sure{
 	position: fixed;
-    width: 100%;
+    width: 90%;
     bottom: .1rem;
 	display: block;
     background: #1e97e4;
@@ -673,7 +677,22 @@ label.label-checkbox input[type="checkbox"]:checked + .item-media i.icon-form-ch
     line-height: 2rem;
     font-size: 1rem;
     margin: 1rem 0;
+    left: 50%;
+    transform:translateX(-50%);
 }
+
+.uploadifive-button{
+	display: block !important;
+	width: 65px !important;
+	height: 65px !important;
+	background: url('../images/icon-upload.jpg') no-repeat;
+	background-size: 100%;
+	background-position: center;
+	display: inline-block;
+}
+
+
+
 
 .m-form{padding: 0 1rem;background-color: #fff;overflow: hidden;}
 .m-form-title{
