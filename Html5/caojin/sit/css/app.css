@@ -791,6 +791,7 @@ label.label-checkbox input[type="checkbox"]:checked + .item-media i.icon-form-ch
 }
 .m-form-item .m-select{
 	width: 100%;
+	border: none;
 }
 .m-form-item .u-color-blue{
 	color: #1e97e4;
@@ -864,7 +865,7 @@ label.label-checkbox input[type="checkbox"]:checked + .item-media i.icon-form-ch
 	background-color: #eee;
 }
 
-
+/* coavh-form */
 
 
 

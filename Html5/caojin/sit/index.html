@@ -20,7 +20,7 @@
 		<h1 class='title'>
 			<div class="searchbar m-searchbar">
 			    <div class="search-input">
-			      <label class="icon icon-search" for="search"></label>
+			      <label class="icon icon-search" style="right: .3rem;left: inherit" onclick="search_keywork()"></label>
 			      <input type="search" id='search' placeholder='请输入查询条件'/>
 			    </div>
 			</div>
@@ -35,82 +35,51 @@
 		</div>
 		<div class="tabs">
 			<div id="tab1" class="tab active">
-			<ul class="g-list-block g-list-resp">
-					<li class="g-list-li">
-						<a href="#" class="g-item-block">
-							<img class="g-item-pic" src="http://gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg">
-							<h3 class="m-school-name">水电费卡士</h3>
-						</a>
-					</li>
-					<li class="g-list-li">
-						<a href="#" class="g-item-block">
-							<img class="g-item-pic" src="http://gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg">
-							<h3 class="m-school-name">水电费卡士</h3>
-						</a>
-					</li>
-					<li class="g-list-li">
-						<a href="#" class="g-item-block">
-							<img class="g-item-pic" src="http://gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg">
-							<h3 class="m-school-name">水电费卡士</h3>
-						</a>
-					</li>
-					<li class="g-list-li">
-						<a href="#" class="g-item-block">
-							<img class="g-item-pic" src="http://gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg">
-							<h3 class="m-school-name">水电费卡士</h3>
-						</a>
-					</li>
-					<li class="g-list-li">
-						<a href="#" class="g-item-block">
-							<img class="g-item-pic" src="http://gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg">
-							<h3 class="m-school-name">水电费卡士</h3>
-						</a>
-					</li>
-					<li class="g-list-li">
-						<a href="#" class="g-item-block">
-							<img class="g-item-pic" src="http://gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg">
-							<h3 class="m-school-name">水电费卡士</h3>
-						</a>
-					</li>
-					<li class="g-list-li">
-						<a href="#" class="g-item-block">
-							<img class="g-item-pic" src="http://gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg">
-							<h3 class="m-school-name">水电费卡士</h3>
-						</a>
-					</li>
-					<li class="g-list-li">
-						<a href="#" class="g-item-block">
-							<img class="g-item-pic" src="http://gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg">
-							<h3 class="m-school-name">水电费卡士</h3>
-						</a>
-					</li>
-					<li class="g-list-li">
-						<a href="#" class="g-item-block">
-							<img class="g-item-pic" src="http://gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg">
-							<h3 class="m-school-name">水电费卡士</h3>
-						</a>
-					</li>
-					<li class="g-list-li">
-						<a href="#" class="g-item-block">
-							<img class="g-item-pic" src="http://gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg">
-							<h3 class="m-school-name">水电费卡士</h3>
-							
-						</a>
-					</li>
-					<li class="g-list-li">
-						<a href="#" class="g-item-block">
-							<img class="g-item-pic" src="http://gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg">
-							<h3 class="m-school-name">水电费卡士</h3>
-							
-						</a>
-					</li>
-					<li class="g-list-li">
-						<a href="#" class="g-item-block">
-							<img class="g-item-pic" src="http://gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg">
-							<h3 class="m-school-name">水电费卡士</h3>
-							
-						</a>
-					</li>
+			<ul class="g-list-block">
+				<li>
+					<a href="#" class="g-item-block">
+					    <div class="g-item-media"><img style="border-radius: 4px;" src="http://gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg"></div>
+					    <div class="g-item-inner g-center">
+					        <div>驾校：长征驾校</div>
+					    </div>
+					    <div class="g-item-sider m-clear-col">
+					    	<div class="m-right"><span class="icon icon-right"></span></div>
+					    </div>
+					</a>
+				</li>
+				<li>
+					<a href="#" class="g-item-block ">
+					    <div class="g-item-media"><img style="border-radius: 4px;" src="http://gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg"></div>
+					    <div class="g-item-inner g-center">
+					        <div>驾校：长征驾校</div>
+					    </div>
+					    <div class="g-item-sider m-clear-col">
+					    	<div class="m-right"><span class="icon icon-right"></span></div>
+					    </div>
+					</a>
+				</li>
+				<li>
+					<a href="#" class="g-item-block ">
+					    <div class="g-item-media"><img style="border-radius: 4px;" src="http://gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg"></div>
+					    <div class="g-item-inner g-center">
+					        <div>驾校：长征驾校</div>
+					    </div>
+					    <div class="g-item-sider m-clear-col">
+					    	<div class="m-right"><span class="icon icon-right"></span></div>
+					    </div>
+					</a>
+				</li>
+				<li>
+					<a href="#" class="g-item-block ">
+					    <div class="g-item-media"><img style="border-radius: 4px;" src="http://gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg"></div>
+					    <div class="g-item-inner g-center">
+					        <div>驾校：长征驾校</div>
+					    </div>
+					    <div class="g-item-sider m-clear-col">
+					    	<div class="m-right"><span class="icon icon-right"></span></div>
+					    </div>
+					</a>
+				</li>		
 				</ul>	
 			</div>
 			<div id="tab2" class="tab ">
@@ -567,6 +536,13 @@
 		console.log(value);
 		$.closeModal('.popup-loction');
 	})
+
+	/*$('.icon-search').on('click',function(){
+		console.log('click')
+	})*/
+	function search_keywork(){
+		console.log('click')
+	}
 
 </script>
 </body>

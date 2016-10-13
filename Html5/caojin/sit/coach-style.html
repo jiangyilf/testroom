@@ -82,7 +82,7 @@
 	</div>
 </div>
 
-<script type='text/javascript' src='http://cdn.bootcss.com/jquery/3.1.0/jquery.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='http://cdn.bootcss.com/jquery/2.1.0/jquery.min.js' charset='utf-8'></script>
 <script type='text/javascript' src='assets/js/light7.min.js' charset='utf-8'></script>
 <script type='text/javascript' src='assets/js/light7-swiper.min.js' charset='utf-8'></script>
 <script type="text/javascript">
@@ -94,6 +94,9 @@ $(function(){
 	function addItems(number, lastIndex) {
 	    var html = '';
 	    /*这里写ajax请求*/
+	    for (var i = 0; i<10; i++) {
+	    	html += "<div>test</div>";
+	    }
 
 	    $('.u-coach-log').append(html);
 	}

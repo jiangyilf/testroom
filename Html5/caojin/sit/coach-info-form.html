@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>教练信息</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<!-- <link rel="shortcut icon" href="/favicon.ico"> -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="assets/css/light7.css">
+<link rel="stylesheet" href="./css/app.css">
+</head>
+<body>
+<!-- 你的html代码 -->
+<div class="page">
+<div class="content">
+<!-- <nav class="m-form-banner">
+	<img src="./images/handleIn.png">
+</nav> -->
+<form class="m-form"> 
+	<div class="m-form-title" style="padding: .5rem 0;">请填写您的基础信息</div>
+	<div class="m-form-item">
+		<label>姓名</label><input type="text" class="m-input-text" placeholder="请输入您的姓名">
+	</div>
+	<div class="m-form-item">
+		<label>联系电话</label><input type="tel" class="m-input-text" placeholder="请输入您的联系电话">
+	</div>
+	<div class="m-form-item">
+		<label>性别</label>
+		<div class="m-input-box">
+			<div class="m-ardio">
+				<input type="radio" id="boy" name="sex" value="男" checked="checked"><span></span>
+			</div>
+			<label for="boy">男</label>
+			<div class="m-ardio">
+				<input type="radio" id="girl" name="sex" value="女"><span></span>
+			</div>
+			<label for="girl">女</label>
+		</div>
+	</div>
+	<div class="m-form-item">
+		<label>年龄</label><input type="tel" class="m-input-text" placeholder="请输入您的年龄">
+	</div>
+	<div class="m-form-item">
+		<label>身份证</label><input type="text" class="m-input-text" placeholder="请输入您的姓名">
+	</div>
+	<div class="m-form-item">
+		<label>所在城市</label>
+		<input type="text" class="m-input-text" id='city-picker' placeholder="请输入您所在城市">
+	</div>
+
+	<div class="m-form-item">
+		<label>驾校</label>
+		<div class="m-input-text u-flex">
+			<select class="m-select" id="subject-school" name="subject">
+				<option value="驾校1">驾校1</option>
+				<option value="驾校2">驾校2</option>
+				<option value="驾校3">驾校3</option>
+				<option value="-1">其他</option>
+			</select>
+			<!-- <span class="icon icon-caret u-color-blue"></span> -->
+		</div>	
+		<input type="text" class="m-input-text" id="other-school" placeholder="请输入驾校" style="display: none;">
+	</div>
+
+	<div class="m-form-item">
+		<label>驾龄</label><input type="tel" class="m-input-text" placeholder="请输入您的驾龄">
+	</div>
+	<div class="m-form-item">
+		<label>备注</label>
+		<div class="m-form-mark" id="subject">
+			<p>请认真核对您的信息，提交过后不能再进行修改</p>
+		</div>
+	</div>
+	<button class="btn-handleIn">提交</button>
+</form>
+	
+</div>	
+</div>
+<script type='text/javascript' src='http://cdn.bootcss.com/jquery/3.1.0/jquery.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='assets/js/light7.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='assets/js/light7-city-picker.min.js' charset='utf-8'></script>
+<script>
+	$("#city-picker").cityPicker({
+		toolbarTemplate: '<header class="bar bar-nav">\
+		<button class="button button-link pull-right close-picker">完成</button>\
+		<h1 class="title">所在城市</h1>\
+		</header>'
+	});
+	$('#subject-school').on('change',function(){
+		var _val = $(this).val();
+		_val == -1 ? $('#other-school').show() : $('#other-school').hide();
+	});
+</script>
+</body>
+</html>

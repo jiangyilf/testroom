@@ -10,6 +10,16 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 <link rel="stylesheet" href="assets/css/light7.css">
 <link rel="stylesheet" href="./css/app.css">
+<style type="text/css">
+    .g-item-block{border-bottom: 1px solid #ebebeb;}
+	.u-user-suite{margin:.2rem .4rem;background: #fff;padding: 0 .4rem;overflow: hidden;}
+	.u-user-suite .g-item-row{padding: .5rem 0;align-items: center;border-bottom: 1px solid #ebebeb;}
+	.u-user-suite .u-user-avarta{width: 2.5rem;height: 2.5rem;}
+	.u-user-suite .u-user-name{padding-left: .5rem;flex: 1;}
+	.u-user-suite .u-user-contant{}
+	.u-btn-order{display: block;margin: .5rem auto;border: none;background: #3097fd;color: #fff;padding: 0.2rem .5rem;}
+	.u-user-suite .m-color-orange{flex: 1;}
+</style> 
 </head>
 <body>
 <!-- 你的html代码 -->
@@ -22,36 +32,59 @@
 	</div>
 	<div class="tabs">
 		<div id="tab1" class="tab active">
-			<div class="card u-user-card">
-			    <div class="card-content">
-			    	<div class="card-content-inner m-order-header">
-				    	<div class="m-order-row">
-							<span>考试报名费</span><span class="m-color-orange">¥500.00</span>	
-						</div>
-						<div class="m-order-row u-font">费用收取：车管所</div>
-						<div class="m-order-row u-font">费用包含：初次学车报名费</div>
-						<div class="m-order-row">
-							<a href="#" class="btn-info">报名详情</a>
-						</div>
-			    	</div>
-			    </div>
+			<div class="u-user-suite">
+				<div class="g-item-row">
+					<img class="u-user-avarta" src="http://placeholder.qiniudn.com/100x100">
+					<div class="u-user-name">张教练</div>
+					
+				</div>
+				<div class="g-item-row">驾考报名费：<span class="m-color-orange">￥500</span></div>
+				<div class="g-item-row">费用收取：车管所</div>
+				<div class="g-item-row">费用包含：初次学车报名费</div>
 			</div>
-			<div class="card u-user-card">
-			    <div class="card-content">
-			    	<div class="card-content-inner m-order-header">
-				    	<div class="m-order-row">
-							<span>教练教学套餐费</span><span class="m-color-orange">¥5000.00</span>	
-						</div>
-						<div class="m-order-row u-font">费用收取：教练</div>
-						<div class="m-order-row u-font">费用包含：科目二、科目三</div>
-						<div class="m-order-row u-font">教学课时：不限学时（45分钟／学时）</div>
-						<div class="m-order-row">
-							<a href="#" class="btn-info">套餐详情</a>
-							<a href="#" class="btn-info">预约练车</a>
-						</div>
-			    	</div>
-			    </div>
-			</div>	
+			<div class="u-user-suite">
+				<div class="g-item-row">
+					<img class="u-user-avarta" src="http://placeholder.qiniudn.com/100x100">
+					<div class="u-user-name">张教练</div>
+					<a class="u-user-contant" href="tel:18200000000" external><span class="icon icon-phone" style="font-size: 1.2rem;color: #2a89e7;"></span> 联系教练</a>
+				</div>
+				<div class="g-item-row">教练教学套餐费<span class="m-color-orange">￥500</span></div>
+				<div class="g-item-row">费用收取：教练</div>
+				<div class="g-item-row">驾校名称：长征驾校</div>
+				<div class="g-item-row">费用包含：科目二、科目三、科目四</div>
+				<div class="g-item-row">教学课时：不限学时（45分钟/学时）</div>
+				<button class="u-btn-order">预约练车</button>
+			</div>
+			<!-- <div class="card u-user-card">
+				    <div class="card-content">
+				    	<div class="card-content-inner m-order-header">
+					    	<div class="m-order-row">
+								<span>考试报名费</span><span class="m-color-orange">¥500.00</span>	
+							</div>
+							<div class="m-order-row u-font">费用收取：车管所</div>
+							<div class="m-order-row u-font">费用包含：初次学车报名费</div>
+							<div class="m-order-row">
+								<a href="#" class="btn-info">报名详情</a>
+							</div>
+				    	</div>
+				    </div>
+				</div>
+				<div class="card u-user-card">
+				    <div class="card-content">
+				    	<div class="card-content-inner m-order-header">
+					    	<div class="m-order-row">
+								<span>教练教学套餐费</span><span class="m-color-orange">¥5000.00</span>	
+							</div>
+							<div class="m-order-row u-font">费用收取：教练</div>
+							<div class="m-order-row u-font">费用包含：科目二、科目三</div>
+							<div class="m-order-row u-font">教学课时：不限学时（45分钟／学时）</div>
+							<div class="m-order-row">
+								<a href="#" class="btn-info">套餐详情</a>
+								<a href="#" class="btn-info">预约练车</a>
+							</div>
+				    	</div>
+				    </div>
+				</div> -->	
 		</div>
 		<div id="tab2" class="tab ">
 			<ul class="g-list-block">	

@@ -6,29 +6,82 @@
 	<title>model</title>
 	<link rel="stylesheet" type="text/css" href="model.css">
 	<style type="text/css">
+	*{margin: 0;padding: 0;}
 	.contanier{
 		height: 800px;
 		width: 100%;
 	}
+	ul,li{list-style: none;}
+	li{width: 40%;height: 3rem;background: #eee;line-height: 3rem;text-align: center;margin: 1rem auto;}
 	</style>
 </head>
 <body>
 <div class="contanier">
-	this is content	
+	<P class="test-model">点击下列按钮打开</P>	
+	<ul>
+		<li class="btn-with">dialog with-title</li>
+		<li class="btn-without">dialog without-title</li>
+		<li class="btn-success">toast success</li>
+		<li class="btn-loading">dialog loading</li>
+		<li class="btn-warning">dialog warning</li>
+	</ul>
 </div>
-<div class="mask"></div>
-<div class="dialog">
+
+
+<div class="modal-overlay" style="visibility: hidden;"></div>
+<!-- model with-title -->
+<div class="dialog" id="with-title">
 	<div class="dialog-hd">
-		<strong>我是标题</strong>
+		<strong class="dialog-hd__title">我是标题</strong>
 	</div>
 	<div class="dialog-bd">
-		<p>弹窗内容，告知当前状态、信息和解决方法，描述文字尽量控制在三行内</p>
+		<p class="dialog-bd__msg">弹窗内容，告知当前状态、信息和解决方法，描述文字尽量控制在三行内</p>
 	</div>
 	<div class="dialog-ft">
 		<a href="javascript:;" class="btn btn-default">取消</a>
 		<a href="javascript:;" class="btn btn-primary">确定</a>
 	</div>
 </div>
-<script type="text/javascript" src="http://cdn.bootcss.com/zepto/1.2.0/zepto.js"></script>
+<!-- model without-title -->
+<div class="dialog dialog-without-title" id="without-title">
+	<div class="dialog-bd">
+		<p class="dialog-bd__msg">弹窗内容，告知当前状态、信息和解决方法，描述文字尽量控制在三行内</p>
+	</div>
+	<div class="dialog-ft">
+		<a href="javascript:;" class="btn btn-default">取消</a>
+		<a href="javascript:;" class="btn btn-primary">确定</a>
+	</div>
+</div>
+<!-- toast success -->
+<div class="toast" id="success">
+	<div class="toast-hd">
+		<i class="icon-success"></i>
+	</div>
+	<div class="toast-msg">已完成</div>
+</div>
+<!-- toast loading -->
+<div class="toast" id="loading">
+	<div class="toast-hd">
+		<i class="icon-loading"></i>
+	</div>
+	<div class="toast-msg">加载中</div>
+</div>
+<!-- toast warning-->
+
+<div class="toast" id="warning">
+	<div class="toast-hd">
+		<i class="icon-warning"></i>
+	</div>
+	<div class="toast-msg">失败</div>
+</div>
+
+<script type="text/javascript" src="http://cdn.bootcss.com/jquery/2.1.0/jquery.min.js"></script>
+<script type="text/javascript" src="./model.js"></script>
+<script type="text/javascript">
+	$('.test-model').on('click',function(){
+		console.log($(this).text())
+		$('.box').fadeIn();
+	})
+</script>
 </body>
 </html>
