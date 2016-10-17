@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ch-zn" style="overflow: hidden;">
+<html lang="ch-zn">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
@@ -30,7 +30,7 @@
 
 <div class="modal-overlay" style="visibility: hidden;"></div>
 <!-- model with-title -->
-<div class="dialog" id="with-title">
+<div class="dialog dialog-title">
 	<div class="dialog-hd">
 		<strong class="dialog-hd__title">我是标题</strong>
 	</div>
@@ -43,7 +43,7 @@
 	</div>
 </div>
 <!-- model without-title -->
-<div class="dialog dialog-without-title" id="without-title">
+<div class="dialog dialog-no-title" >
 	<div class="dialog-bd">
 		<p class="dialog-bd__msg">弹窗内容，告知当前状态、信息和解决方法，描述文字尽量控制在三行内</p>
 	</div>
@@ -81,7 +81,51 @@
 	$('.test-model').on('click',function(){
 		console.log($(this).text())
 		$('.box').fadeIn();
-	})
+	});
+	$('.btn-with').on('click',function(){
+		$.modelJ({
+			model:'alert',
+			type:'title',
+			msg:{
+				title:'我是标题',
+				main:'弹窗内容，告知当前状态、信息和解决方法，描述文字尽量控制在三行内'
+			},
+			buttons:[{
+				text:'取消',
+				media:{
+					color:'red'
+				},
+				callback:function(){
+					console.log('取消');
+				}
+			},{
+				text:'确定',
+				media:{},
+				callback:function(e){
+					console.log('确定');
+				}
+			}]
+		});
+	});
+	$('.btn-without').on('click',function(){
+		$.modelJ({
+			model:'alert',
+			msg:{
+				main:'弹窗内容，告知当前状态、信息和解决方法，描述文字尽量控制在三行内'
+			}
+		});
+	});
+	$('.btn-success').on('click',function(){
+		$.modelJ({
+			model:'toast',
+			type:'success',
+			text:'投票成功',
+			delay:50,
+			media:{
+				color:'#fff'
+			}
+		});
+	});
 </script>
 </body>
 </html>

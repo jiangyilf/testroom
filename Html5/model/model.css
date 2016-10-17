@@ -71,11 +71,11 @@
 	color: #999;
 }
 
-/* dialog without-title */
-.dialog-without-title .dialog-bd{
+/* dialog no-title */
+.dialog-no-title .dialog-bd{
 	padding-top:1.2em;
 }
-.dialog-without-title .dialog-bd .dialog-bd__msg{
+.dialog-no-title .dialog-bd .dialog-bd__msg{
 	color: #333;
 }
 
