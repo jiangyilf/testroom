@@ -6,23 +6,6 @@
 (function(jQuery) {
 	var $ = jQuery;
 
-	/*$.fn.modelJ = function(argument) {
-		console.log('argument')
-	}*/
-/*	function ModelJ(){
-		
-	}
-	ModelJ.prototype.show = function(){
-		console.log('show');
-		$('#'+this.id).fadeIn();
-		return this;
-	}
-	ModelJ.prototype.close = function(){
-		console.log('close');
-		$('#'+this.id).hide();
-		return this;
-	}*/
-
 	/*----Toast----*/
 	var Toast = function(config){
 		this.option = config || {};
@@ -31,8 +14,7 @@
 		this.show();
 		//console.log(this.option);
 	}
-	//Toast.prototype = new ModelJ();
-
+	
 	Toast.prototype.render = function(){
 		this.id = ('toast_'+ Math.random()).replace('.','_');
 
@@ -54,7 +36,7 @@
 		$('#'+this.id).fadeIn();
 		setTimeout(function(){
 			$('#'+self.id).hide().remove();
-		},self.delay*1000 || 1000);
+		},self.option['delay']*1000 || 1000);
 	}
 
 
@@ -66,7 +48,7 @@
 		this.show();
 		//console.log(this.option);
 	}
-	//Dialog.prototype = new ModelJ();
+	
 	Dialog.prototype.close = function(){
 		$('html').css('overflow','auto');
 		$('#modal-overlay').hide();
@@ -104,10 +86,6 @@
 			var _i = $('<a href="javascript:;" class="btn"></a>');
 
 			_i.text(item.text);
-
-			if(index == 1){
-				_i.addClass('btn-primary');
-			}
 
 			/*回调函数*/
 			if(item.callback && typeof item.callback === 'function'){
@@ -155,6 +133,9 @@
 
 		$('body').append(_dialog);
 	}
+
+
+	/*----confirm----*/
 
 	jQuery.modelJ = function(config){
 		switch(config.model){
