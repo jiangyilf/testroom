@@ -1,0 +1,19 @@
+{
+	"pages":[
+		"pages/index/index",
+		"pages/detail/detail"		
+	],
+	"window":{
+		"navigationBarBackgroundColor": "#32b0ff",
+		"navigationBarTextStyle":"whit",
+		"navigationBarTitleText":"v2ex",
+		"backgroundColor":"#ffffff",
+		"backgroundTextStyle":"dark",
+		"enablePullDownRefresh":false
+	},
+	"networkTimeout": {
+		"request": 10000,
+	    "downloadFile": 10000
+	},
+	"debug": false
+}

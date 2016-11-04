@@ -1,0 +1,20 @@
+.f-pic{
+    width: 150rpx;
+    height: 150rpx;
+    border-radius: 50%;
+}
+.f-time{
+    font-size: 24rpx;
+    color: #bbb;
+}
+.content,.reader-msg{
+    padding: 20rpx;
+}
+.f-pic-reader{
+    width: 90rpx;
+    height: 90rpx;
+}
+.f-reader-context{
+    padding-top: 20rpx;
+    color: #a5abaf;
+}

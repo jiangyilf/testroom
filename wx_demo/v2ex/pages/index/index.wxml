@@ -1,0 +1,16 @@
+<view>
+    <view class="container">
+        <scroll-view scroll-y="true" style="height:{{scrollHeight}}px" bindscrolltolower="handleFetch">
+            <view wx:for="{{list}}" wx:key="item.id}">
+            <view class="u-item" index="{{index}}" index="{{item.id}}" id="{{item.id}}" catchtap="redictDetail">
+                <view class="u-item-pic"><image class="f-pic" src="{{item.member.avatar_normal}}"></image></view>
+                <view class="u-item-cel">
+                    <text class="f-name">{{item.title}}</text>
+                    <text class="f-ftype">{{item.member.username}} {{item.node.name}}</text>
+                </view>
+            </view>
+            </view>
+        </scroll-view>
+        <view class="loading" hidden="{{hidden}}">加载中...</view>
+    </view>
+</view>

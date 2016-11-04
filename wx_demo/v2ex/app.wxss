@@ -1,0 +1,20 @@
+page{
+	height:100%;
+}
+.u-item{
+	display: flex;
+	flex-flow: row nowrap;
+	padding: 20rpx;
+    border-bottom: 1px solid #e0e0e0;
+	box-sizing: border-box;
+}
+.u-item-pic{
+	display: flex;
+	box-sizing: border-box;
+}
+.u-item-cel{
+	padding: 10rpx;
+	display: flex;
+	flex-flow: column;
+	justify-content: space-between;
+}

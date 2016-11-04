@@ -1,0 +1,29 @@
+
+.f-pic{
+	width: 180rpx;
+    height: 140rpx;
+}
+.f-name{
+    font-size: 33rpx;
+    color: #333;
+}
+.f-type{
+    display: inline-block;
+    padding: 2rpx;
+    margin: 0 2rpx;
+    border-radius: 4rpx;
+    background-color: #32b0ff;
+    color: #ffffff;
+    font-size: 24rpx;
+    vertical-align: middle;
+}
+.f-ftype{
+    font-size: 24rpx;
+    color: #bbb;
+}
+.loading{
+    height: 70rpx;
+    line-height: 70rpx;
+    color: #bbb;
+    text-align: center;
+}

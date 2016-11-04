@@ -1,0 +1,27 @@
+<view class="section">
+    <view class="header">
+        <view class="u-item">
+            <view class="u-item-pic"><image class="f-pic" src="{{detail.member.avatar_normal}}"></image></view>
+            <view class="u-item-cel">
+                <text class="f-title">{{detail.title}}</text>
+                <text class="f-time">{{detail.member.username}}   {{detail.created}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="content" wx:if="{{detai.content}}">{{detai.content}}</view>
+    <view class="content" wx:else> {{detail.title}}</view>
+</view>
+<view class="section">
+    <view class="reader_msg">
+       <view wx:for="{{replies}}" wx:key="{{item.id}}">
+         <view class="u-item">
+            <view class="u-item-pic"><image class="f-pic-reader" src="{{item.member.avatar_normal}}"></image></view>
+            <view class="u-item-cel">
+                <text class="f-name">{{item.member.username}}</text>
+                <text class="f-time">{{item.created}}</text>
+                <text class="f-reader-context">{{item.content}}</text>
+            </view>
+          </view>
+        </view>
+    </view>
+</view>
