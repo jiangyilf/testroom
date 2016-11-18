@@ -1,0 +1,66 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+<meta charset="utf-8">  
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0 ,user-scalable=no">  
+<body>
+<h1>javaScript 单例测试</h1>
+
+<script type="text/javascript">
+/*代理实现简单的单例*/	
+
+var CreateCooke = function(name) {
+	this.name = name;
+	this.time = Math.random();
+}
+
+CreateCooke.prototype.getName = function(){
+	return (console.log(this.name));
+}
+
+//代理实现单例
+var SingletonCreateCooke = (function(){
+	var instance;
+	return function(name){
+		if(!instance){
+			instance =  new CreateCooke(name);
+		}
+		return instance;
+	}
+})();
+
+var a = new SingletonCreateCooke('曲奇');
+var b = new SingletonCreateCooke('苏打');
+
+console.log(a === b);
+
+/*惰性单例*/
+/*????????????????????????????????????????????????*/
+/*var getSingle = function(fn){
+	var instance;
+	return function(){
+		return instance || (instance = fn.apply(this,arguments));
+	}
+}
+
+var tt = getSingle(CreateCooke);
+
+var xx = tt();
+var bb = tt(); //传参问题
+*/
+
+
+var a = {
+	xx:function(xx){
+		console.log(xx);
+	},
+	bb:function(xx){
+		console.log(xx);
+	}
+}
+
+
+
+</script>
+</body>
+</html>  

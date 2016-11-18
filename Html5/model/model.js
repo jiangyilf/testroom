@@ -72,6 +72,7 @@
 		var _bd = $('<div class="dialog-bd"></div>');
 		var _bdMsg = $('<p class="dialog-bd__msg">');
 
+		//_bdMsg.html(text);
 		_bdMsg.text(text);
 		_bd.append(_bdMsg);
 

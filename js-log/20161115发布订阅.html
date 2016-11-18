@@ -1,0 +1,114 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+<meta charset="utf-8">  
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0 ,user-scalable=no">  
+<body>
+<h1>javaScript 单例测试</h1>
+
+<script type="text/javascript">
+/*发布订阅模式*/
+
+/*
+var salesOffices = {}; //定义发布者
+
+salesOffices.clientList = {}; //缓存列表，存放订阅者回调函数
+
+salesOffices.listen = function(key,fn){  //增加订阅者
+	if(!this.clientList[key]){      //如果还没有订阅此消息，创建一个消息缓存列表
+		this.clientList[key] = [];
+	}
+	this.clientList[key].push(fn);         //订阅者信息加入缓存列表
+}
+
+salesOffices.trigger = function(){
+	var key = Array.prototype.shift.call(arguments);  //取出消息类型
+	var fns = this.clientList[key];   //取出消息对应的回调函数
+ 
+	if(!fns || fns.length === 0){   //判断是否有这个订阅
+		return false;
+	}
+
+	for (var i = 0,fn; fn = fns[i++];) {
+		fn.apply( this , arguments );
+	}
+}
+
+salesOffices.listen('xiaoming',function(a){
+	console.log('面积是：' + a);
+});
+
+salesOffices.listen('xiaoHong',function(a){
+	console.log('面积是：' + a);
+});
+
+
+salesOffices.trigger('xiaoming',5000);
+salesOffices.trigger('xiaoHong',6000);
+*/
+
+
+var event = {
+	clientList:{},
+	listen:function(key,fn){
+		if(!this.clientList[key]){
+			this.clientList[key] = [];
+		}
+		this.clientList[key].push(fn);
+	},
+	trigger:function(){
+		var key = Array.prototype.shift.call(arguments),
+		    fns = this.clientList[key];
+		if(!fns || fns.length === 0){
+			return false;
+		}
+		for (var i = 0,fn; fn = fns[i++];) {
+			fn.apply(this,arguments);
+		}
+	},
+	remove:function(key,fn){
+		var fns = this.clientList[key];
+		if(!fns){  //如果key对应的消息没有被订阅，返回false
+			return false;
+		}
+		if(!fn){ //如果没有fn，取消key下面的所有回调函数
+			fns && (fns.length = 0);
+		} else {
+			for(var l = fns.length -1 ;l>=0;l--){
+				var _fn = fns[l];
+				if(_fn === fn){
+					fns.splice(l,1); //删除订阅者的回调函数
+				}
+			}
+		}
+	}
+}
+
+var installEvent = function(obj){
+	for(var i in event){
+		obj[i] = event[i];
+	}
+}
+
+var salesOffices = {};
+installEvent(salesOffices);
+
+
+salesOffices.listen('xiaoming',function(a){
+	console.log('面积是：' + a);
+});
+
+salesOffices.listen('xiaoHong',function(a){
+	console.log('面积是：' + a);
+});
+
+
+salesOffices.remove('xiaoHong')
+salesOffices.trigger('xiaoming',5000);
+salesOffices.trigger('xiaoHong',6000);
+
+
+
+</script>
+</body>
+</html>  

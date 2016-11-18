@@ -1,0 +1,81 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+<meta charset="utf-8">  
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0 ,user-scalable=no">  
+<style type="text/css">
+	.btn_group{margin: 100px auto;}
+</style>
+</head>
+<body>
+<h1>javaScript 命令模式</h1>
+<div class="btn_group">
+	<button class="btn" id="btn1">刷新菜单目录</button>
+	<button class="btn" id="btn2">增加子菜单</button>
+	<button class="btn" id="btn3">删除子菜单</button>
+</div>
+<script type="text/javascript">
+var btn1 = document.getElementById('btn1');
+var btn2 = document.getElementById('btn2');
+var btn3 = document.getElementById('btn3');
+
+var setCommand = function(button,command){
+	button.onclick = function(){
+		command.execute();
+	}
+}
+
+var MenuBar = {
+	refresh:function(){
+		console.log('刷新菜单目录');
+	}
+}
+
+var subMenu = {
+	add:function(){
+		console.log('增加子菜单');
+	},
+	del:function(){
+		console.info('删除子菜单');
+	}
+}
+
+var RefreshMenuBar = function(receiver){
+	this.receiver = receiver;
+}
+RefreshMenuBar.prototype.execute = function(){
+	this.receiver.refresh();
+}
+
+var AddSubMenu = function(receiver){
+	this.receiver = receiver;
+}
+AddSubMenu.prototype.execute = function(){
+	this.receiver.add();
+}
+
+var DelSubMenu = function(receiver){
+	this.receiver = receiver;
+}
+DelSubMenu.prototype.execute = function(){
+	console.info('删除子菜单');
+}
+
+var refreshMenuBar = new RefreshMenuBar(MenuBar);
+var addSubMenu = new AddSubMenu(subMenu);
+var delSubMenu = new DelSubMenu(subMenu);
+
+setCommand(btn1,refreshMenuBar);
+setCommand(btn2,addSubMenu);
+setCommand(btn3,delSubMenu);
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>  
