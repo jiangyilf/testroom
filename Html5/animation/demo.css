@@ -1,0 +1,9 @@
+.wapper{
+	padding: 20px;
+}
+.anmiation{
+	position: absolute;
+	width: 102px;
+    height: 80px;
+	background-repeat: no-repeat;
+}

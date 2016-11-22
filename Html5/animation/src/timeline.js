@@ -1,4 +1,7 @@
 /* Create by LeoJo*/
+
+var Timeline = (function(){
+
 'use strict';
 
 var DEFAULT_INTERVAL = 1000 / 60;
@@ -9,6 +12,7 @@ var STATE_INITIAL = 0;
 var STATE_START = 1;
 //停止状态
 var STATE_STOP = 2;
+
 
 /**
 *raf
@@ -37,7 +41,7 @@ var cancelAnimationFrame = (function(){
 * Timeline 时间轴
 *@constructor
 **/
-function Timeline(){
+var Timeline = function(){
 	this.anmiationHandler = 0;
 	this.state = STATE_INITIAL;
 };
@@ -46,7 +50,7 @@ function Timeline(){
 *时间轴上每一次回调执行的函数
 *@param time 从动画开始到当前动画执行的时间
 **/
-Timeline.prototype.oneenterframe = function(time){
+Timeline.prototype.onenterframe = function(time){
 
 };
 
@@ -67,9 +71,9 @@ Timeline.prototype.start = function(interval){
 *动画停止
 **/
 Timeline.prototype.stop = function(interval){
-	if(this.state !== STATE_STOP){
+	if(this.state !== STATE_START)
 		return;
-	}
+	
 
 	this.state = STATE_STOP;
 
@@ -122,11 +126,13 @@ function startTimeline(timeline,startTime){
 		//如果当前时间与上一次回调的时间戳大于设置的时间间隔
 		//表示这一次可以执行回调函数
 		if(now - lastTick >= timeline.interval){
-			timeline.oneenterframe(now - startTime);
+			timeline.onenterframe(now - startTime);
 			lastTick = now;
 		}
 	}
 
 };
 
+return Timeline;
 
+})();

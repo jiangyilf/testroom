@@ -109,7 +109,6 @@ function getId(){
 }
 
 
-module.exports = loadImage;
 
 
 
