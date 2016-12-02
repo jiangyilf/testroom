@@ -9,6 +9,9 @@
 <div class="wapper">
 	
 	<div class="anmiation" id="rabbit1"></div>
+	<div class="anmiation" id="rabbit2"></div>
+	<div class="anmiation" id="rabbit3"></div>
+	<div class="anmiation" id="rabbit4"></div>
 
 
 
@@ -20,12 +23,15 @@
 
 <script type="text/javascript" src="./src/imageloader-1.js"></script>
 <script type="text/javascript" src="./src/timeline.js"></script>
-<script type="text/javascript" src="./src/animation.js"></script>
+<script type="text/javascript" src="./src/animation-1.js"></script>
 <script type="text/javascript">
+window.onload = function(){
+
 	function $(e){
 		return document.getElementById(e);
 	}
 	var animation = new Animation();
+	var animation2 = new Animation();
 
 	var images = ['./images/rabbit-big.png', './images/rabbit-lose.png', './images/rabbit-win.png'];
 	var rightRunningMap = ["0 -854", "-174 -852", "-349 -852", "-524 -852", "-698 -851", "-873 -848"];
@@ -34,11 +40,24 @@
 	var rabbitLoseMap = ["0 0", "-163 0", "-327 0", "-491 0", "-655 0", "-819 0", "0 -135", "-166 -135", "-333 -135", "-500 -135", "-668 -135", "-835 -135", "0 -262"];
 
 	var $rabbit1 = $('rabbit1');
+	var $rabbit2 = $('rabbit2');
+	var $rabbit3 = $('rabbit3');
 
+	repeat();
+	win();
+	function repeat() {
+		var repeatAnimation = animation.loadImage(images).changePosition($rabbit1, rightRunningMap , images[0]).repeat();
+		repeatAnimation.start(80);
+	}
+	function win() {
+		var winAnimation = animation2.loadImage(images).changePosition($rabbit3, rabbitWinMap, images[2]).repeat(3).then(function () {
+			console.log('win animation repeat 3 times and finished');
+			winAnimation.dispose();
+		});
+		winAnimation.start(200);
+	}
 
-	var repeatAnimation = animation.loadImage(images).changePosition($rabbit1, rightRunningMap , images[0]);
-	repeatAnimation.start(80);
-
+}
 
 </script>
 </body>
